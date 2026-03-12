@@ -1,0 +1,254 @@
+{
+  "metadata": {},
+  "tenantId": "demo_tenant",
+  "resourceBaseUrl": "https://cdn.example.test/assets/",
+  "clientSettings": {
+    "platformMode": "demo_mode",
+    "serviceUrl": "https://api.example.test/v1"
+  },
+  "activityLog": {
+    "enabled": true,
+    "relativeLogPath": "./mock/",
+    "scriptPath": "./mock/activity-log.js"
+  },
+  "interactionLog": {
+    "enabled": true,
+    "serviceUrl": "https://api.example.test/v1"
+  },
+  "appTitle": "Demo Content Portal",
+  "materialsText": "DOC-LECODE-BBB",
+  "materialsCreateDate": "2026年1月作成",
+  "list": [
+    {
+      "eventId": "XXXXXXXX_XX",
+      "channels": "AA,BB,CC,DD,EE",
+      "owner": "demo_tenant",
+      "partnerConfig": {
+        "enabled": false,
+        "partnerCode": null
+      },
+      "title": "Sample Session Title",
+      "subtitle": "Sample Session Subtitle",
+      "eventDate": "2026/04/14",
+      "streaming": [
+        {
+          "open": "2026/04/01 18:30:00",
+          "close": "2026/04/01 19:40:00"
+        }
+      ],
+      "categoryCodePrimary": "CATEGORY-XXXX",
+      "categoryCodeSecondary": null,
+      "logoAsset": null,
+      "summary": "Sample session description.",
+      "topic": null,
+      "sessionGroups": [
+        {
+          "sectionTheme": null,
+          "startAt": "2026/04/14 19:00:00",
+          "endAt": "2026/04/14 19:45:00",
+          "participants": [
+            {
+              "participantRole": "leader",
+              "displayName": "Sample Person 1",
+              "phoneticName": null,
+              "organizationName": "Sample Organization A",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            },
+            {
+              "participantRole": "speaker",
+              "displayName": "Sample Person 2",
+              "phoneticName": null,
+              "organizationName": "Sample Organization B",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            }
+          ]
+        }
+      ],
+      "heroAsset": null,
+      "accentColor": "#00ABC7",
+      "materialsText": "PP-BBBBBBBB",
+      "materialsCreateDate": "2026年2月作成",
+      "documentBaseUrl": "https://cdn.example.test/assets/",
+      "linkActive": [
+        {
+          "open": "2026/04/01 18:00:00",
+          "close": "2026/04/01 19:40:00"
+        }
+      ],
+      "contentsClose": "2026/05/01 19:40:00",
+      "accessWindowCount": 1,
+      "contactPhone": null,
+      "tag": {
+        "regionName": "regionB",
+        "topicCategory": null,
+        "contentType": "TypeStandard"
+      },
+      "showOwner": false,
+      "showPartner": false,
+      "copyrightNotice": "Copyright © 2026 Example Demo Co.",
+      "privacyPolicyUrl": "https://www.example.test/privacy",
+      "termsUrl": "https://www.example.test/terms"
+    },
+    {
+      "eventId": "20272222TEST",
+      "channels": "AA,BB,CC",
+      "owner": "demo_tenant",
+      "partnerConfig": {
+        "enabled": false,
+        "partnerCode": null
+      },
+      "title": "Sample Session Title",
+      "subtitle": "Sample Session Subtitle",
+      "eventDate": "2026/03/06",
+      "streaming": [
+        {
+          "open": "2026/03/06 18:30:00",
+          "close": "2026/03/06 19:30:00"
+        }
+      ],
+      "categoryCodePrimary": "CATEGORY-SSSS",
+      "categoryCodeSecondary": null,
+      "logoAsset": null,
+      "summary": "Sample session description.",
+      "topic": null,
+      "sessionGroups": [
+        {
+          "sectionTheme": null,
+          "start": "2026/03/06 18:30:00",
+          "end": "2026/03/06 19:30:00",
+          "participants": [
+            {
+              "participantRole": "leader",
+              "displayName": "Sample Person 1",
+              "phoneticName": null,
+              "organizationName": "Sample Organization",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            },
+            {
+              "participantRole": "speaker",
+              "displayName": "Sample Person 2",
+              "phoneticName": null,
+              "organizationName": "Sample Organization",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            },
+            {
+              "participantRole": "speaker",
+              "displayName": "Sample Person 3",
+              "phoneticName": null,
+              "organizationName": "Sample Organization",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            }
+          ]
+        }
+      ],
+      "heroAsset": null,
+      "accentColor": "#00ABC7",
+      "documentCode": "DOC-CCCCCC",
+      "documentLabel": "2025年12月作成",
+      "documentBaseUrl": "https://cdn.example.test/assets/",
+      "linkActive": [
+        {
+          "open": "2026/03/06 18:00:00",
+          "close": "2026/03/06 19:30:00"
+        }
+      ],
+      "contentsClose": "2026/04/05 19:30:00",
+      "accessWindowCount": 1,
+      "contactPhone": null,
+      "tag": {
+        "regionName": "regionB",
+        "topicCategory": "TopicAlpha",
+        "contentType": "TypeStandard"
+      },
+      "showOwner": false,
+      "showPartner": false,
+      "copyrightNotice": "Copyright © 2026 Example Demo Co.",
+      "privacyPolicyUrl": "https://www.example.test/privacy",
+      "termsUrl": "https://www.example.test/terms"
+    },
+    {
+      "eventId": "BBBBBBBBB",
+      "channels": "AA,BB,CC",
+      "owner": "demo_tenant",
+      "partnerConfig": {
+        "enabled": false,
+        "partnerCode": null
+      },
+      "title": "Sample Session Title",
+      "subtitle": "Sample Session Subtitle",
+      "eventDate": "2026/03/01",
+      "streaming": [
+        {
+          "open": "2026/03/01 09:30:00",
+          "close": "2026/03/01 12:30:00"
+        }
+      ],
+      "categoryCodePrimary": "CATEGORY-BBBB",
+      "categoryCodeSecondary": null,
+      "logoAsset": null,
+      "summary": "Sample session description.",
+      "topic": null,
+      "sessionGroups": [
+        {
+          "sectionTheme": null,
+          "start": "2026/03/01 09:30:00",
+          "end": "2026/03/01 12:30:00",
+          "participants": [
+            {
+              "participantRole": "leader",
+              "displayName": "Sample Person 1",
+              "phoneticName": null,
+              "organizationName": "Sample Organization",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            },
+            {
+              "participantRole": "speaker",
+              "displayName": "Sample Person 2",
+              "phoneticName": null,
+              "organizationName": "Sample Organization",
+              "positionTitle": null,
+              "imageAsset": null,
+              "legacyBiography": null
+            }
+          ]
+        }
+      ],
+      "heroAsset": null,
+      "accentColor": "#FFC000",
+      "documentCode": "DOC-ECODE1",
+      "documentLabel": "2026年2月作成",
+      "documentBaseUrl": "https://cdn.example.test/assets/",
+      "accessWindows": [
+        {
+          "open": "2026/03/01 09:00:00",
+          "close": "2026/03/01 12:30:00"
+        }
+      ],
+      "contentsClose": "2026/03/31 12:30:00",
+      "accessWindowCount": 1,
+      "contactPhone": null,
+      "tag": {
+        "regionName": "regionB",
+        "topicCategory": "TopicAlpha",
+        "contentType": "TypeStandard"
+      },
+      "showOwner": false,
+      "showPartner": false,
+      "copyrightNotice": "Copyright © 2026 Example Demo Co.",
+      "privacyPolicyUrl": "https://www.example.test/privacy",
+      "termsUrl": "https://www.example.test/terms"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "regionName": {
+    "regionA": "sample_aaa",
+    "regionB": "sample_bbb",
+    "regionC": "sample_ccc",
+    "regionD": "sample_ddd"
+  },
+
+  "vl800_path": "./sample_result/vl800",
+
+  "vl101_path": "./sample_result/vl101"
+}
