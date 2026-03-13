@@ -12,7 +12,6 @@ Processing multiple JSON files
 
 本ツールは vl800 と vl101 の 2 つのデータ構造を対象に処理を行います。
 
-
 【主な機能】
 1. 期限切れ要素の削除
 　vl101 の JSON ファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出して削除します。
@@ -23,7 +22,6 @@ Processing multiple JSON files
 　対象イベントは削除前に一覧表示され、削除実行前にユーザー確認が行われます。
   Do you want to proceed with deletion? (y/n)
 　削除処理は sweep_close_contents() により実行されます。 
-
 
 2. イベントID入力
 　CLI で vl800 配下のフォルダ名（イベント ID）を入力します。
@@ -42,14 +40,13 @@ Processing multiple JSON files
 　・materialsCreateDate
 
 　抽出処理は get_values_from_vl800_setting_json() で実装されています。 
-
+ 
 4. 重複チェック
 　vl101の一覧ページに同じeventIdが存在するかを確認します。
 　判定結果に応じて次の処理を行います。
 
 　・存在しない場合 → 新規追加
 　・存在する場合 → 既存データを更新
-
 5. vl101 setting.json 更新
 　新規または更新対象のイベントを次のファイルへ反映します。
 　vl101/{region}/json/setting.json
@@ -77,25 +74,8 @@ materialsCreateDate 更新
 
 結果は logs/ ディレクトリに保存されます。
 
-
 【実行方法】
 　python tools/main.py または run_app.bat
-
-
-【設定ファイル】
-　data.json
-
-　{
-  　"regionName": {
-    　"regionA": "sample_aaa",
-    　"regionB": "sample_bbb",
-    　"regionC": "sample_ccc",
-    　"regionD": "sample_ddd"
-  　},
-  　"vl800_path": "./sample_result/vl800",
-  　"vl101_path": "./sample_result/vl101"
-　}
-
 
 【必要環境】
 　Python 3.10+
