@@ -11,6 +11,7 @@ Processing multiple JSON files
 
 このツールは vl800 と vl101 の2つのデータ構造を対象に処理します。
 
+
 【主な機能】
 1. 期限切れ要素の削除
 　vl101のJSONファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出し削除します。
@@ -62,8 +63,10 @@ Processing multiple JSON files
 　更新内容（新規追加、更新、削除、materialsText、materialsCreateDate）を生成。
 　結果は logs/ に保存されます。
 
+
 【実行方法】
 　python tools/main.py または run_app.bat
+
 
 【設定ファイル】
 　data.json
@@ -77,6 +80,7 @@ Processing multiple JSON files
   　"vl800_path": "./sample_result/vl800",
   　"vl101_path": "./sample_result/vl101"
 　}
+
 
 【必要環境】
 　Python 3.10+
