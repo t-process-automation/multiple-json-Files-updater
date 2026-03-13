@@ -1,5 +1,5 @@
-Processing multiple JSON files
-複数の JSON ファイル処理ツール
+【複数の JSON ファイル処理ツール】
+Scroll down for the English version.
 
 このツールは、複数の独立した JSON ファイル（vl800 配下）に含まれる要素を、ひとつの集約 JSON ファイル（vl101）へ自動で転記・更新する CLI ツールです。
 イベントデータの同期・更新処理を自動化し、以下の作業を実行します。
@@ -88,3 +88,90 @@ materialsCreateDate 更新
 
 　外部ライブラリは使用していません。
 
+
+
+【Processing Multiple JSON Files】
+Multiple JSON File Processing Tool
+
+This CLI tool automatically transfers and updates elements from multiple independent JSON files (stored under vl800) into a single aggregated JSON file (vl101).
+It automates the synchronization and maintenance of event data by performing the following tasks:
+
+1.Read the vl101 JSON file, detect expired elements, and remove them
+2.Add new events from vl800 → vl101
+3.Update existing events if the same event already exists
+4.Copy materialsText and materialsCreateDate from the event with the latest date in vl800 to vl101
+5.Generate notification text describing the operation results
+
+This tool operates on two data structures:
+・vl800
+・vl101
+
+【Main Features】
+1. Expired Event Cleanup
+The tool reads the vl101 JSON file and automatically detects events whose contentsClose date has expired.
+The expiration condition is determined as follows:contentsClose + grace_days
+Target events are displayed before deletion, and user confirmation is required before executing the deletion.
+Do you want to proceed with deletion? (y/n)
+The deletion process is executed by:sweep_close_contents()
+
+2. Event ID Input
+Users enter vl800 folder names (event IDs) via the CLI.
+・Multiple IDs can be entered
+・Input validation is implemented
+
+3. vl800 setting.json Parsing
+
+The tool retrieves the following file based on the input folder name and extracts the required values:vl800/{eventId}/list/{region}/setting.json
+
+Extracted fields:
+・eventId
+・eventDate
+・regionName
+・materialsText
+・materialsCreateDate
+
+The extraction process is implemented in:get_values_from_vl800_setting_json()
+
+4. Duplicate Check
+The tool checks whether the same eventId already exists in the vl101 event list.
+
+Processing logic:
+・If it does not exist → Add as a new event
+・If it exists → Update the existing event
+
+5. vl101 setting.json Update
+New or updated events are written to the following file:vl101/{region}/json/setting.json
+
+Processing steps:
+・Remove expired elements
+・Insert new events at the top of the list
+・If updating, remove the existing entry and insert the updated entry at the top
+
+6. Materials Information Update
+Among newly added events, the event with the latest eventDate is used as the reference to update:
+・materialsText
+・materialsCreateDate
+
+7. Operation Result Notification
+The tool generates notification text based on the processing results.
+
+The generated notification includes:
+・Newly added events
+・Updated events
+・Deleted events
+・Updates to materialsText
+・Updates to materialsCreateDate
+
+The results are saved in the following directory: logs/
+
+【Run】
+run_app.bat
+
+【Requirements】
+Python 3.10+
+
+Standard libraries used:
+・json
+・pathlib
+・dataclasses
+・collections
