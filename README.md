@@ -88,6 +88,10 @@ Scroll down for the English version.<br>
 【Processing Multiple JSON Files】<br>
 Multiple JSON File Processing Tool<br>
 
+purpose:<br>
+This tool automatically updates a central JSON file by merging data from multiple temporary JSON files.<br>
+It eliminates the need to update the data manually.<br>
+<br>
 This CLI tool automatically transfers and updates elements from multiple independent JSON files (stored under vl800) into a single aggregated JSON file (vl101).<br><br>
 It automates the synchronization and maintenance of event data by performing the following tasks:<br>
 1.Read the vl101 JSON file, detect expired elements, and remove them<br>
