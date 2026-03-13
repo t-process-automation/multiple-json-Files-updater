@@ -1,4 +1,4 @@
-VL Event Updater
+Processing multiple JSON files
 
 This tool is a CLI utility for maintaining event data in setting.json files used for web lecture systems.
 
