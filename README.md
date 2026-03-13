@@ -12,56 +12,53 @@ Scroll down for the English version.
 
   本ツールは vl800 と vl101 の 2 つのデータ構造を対象に処理を行います。
 
-【主な機能】
- 1. 期限切れ要素の削除
-  vl101 の JSON ファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出して削除します。
-
-  期限判定は次の条件で行われます。contentsClose + grace_days
-  
-  対象イベントは削除前に一覧表示され、削除実行前にユーザー確認が行われます。
-  Do you want to proceed with deletion? (y/n)
-　
-  削除処理は sweep_close_contents() により実行されます。 
+【主な機能】<br>
+ 1. 期限切れ要素の削除<br>
+  vl101 の JSON ファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出して削除します。<br>
+  期限判定は次の条件で行われます。contentsClose + grace_days<br> 
+  対象イベントは削除前に一覧表示され、削除実行前にユーザー確認が行われます。<br>
+  Do you want to proceed with deletion? (y/n)<br>
+  削除処理は sweep_close_contents() により実行されます。<br>
 <br>
-2. イベントID入力
+2. イベントID入力<br>
 　CLI で vl800 配下のフォルダ名（イベント ID）を入力します。<br>
 　・複数入力が可能<br>
 　・入力バリデーションあり
 <br>
-3. vl800 setting.json 解析
+3. vl800 setting.json 解析<br>
 　入力されたフォルダ名から、次のファイルを取得して必要な値を抽出します。<br>
-　vl800/{eventId}/list/{region}/setting.json
-
+　vl800/{eventId}/list/{region}/setting.json<br>
+<br>
 　取得項目<br>
 　- eventId<br>
 　- eventDate<br>
 　- regionName<br>
 　- materialsText<br>
 　- materialsCreateDate<br>
-
-　抽出処理は get_values_from_vl800_setting_json() で実装されています。 
 <br>
-4. 重複チェック
-　vl101の一覧ページに同じeventIdが存在するかを確認します。
+　抽出処理は get_values_from_vl800_setting_json() で実装されています。<br>
+<br>
+4. 重複チェック<br>
+　vl101の一覧ページに同じeventIdが存在するかを確認します。<br>
 　判定結果に応じて次の処理を行います。<br>
 　- 存在しない場合 → 新規追加<br>
 　- 存在する場合 → 既存データを更新<br>
 <br>
-5. vl101 setting.json 更新
-　新規または更新対象のイベントを次のファイルへ反映します。
-　vl101/{region}/json/setting.json
+5. vl101 setting.json 更新<br>
+　新規または更新対象のイベントを次のファイルへ反映します。<br>
+　vl101/{region}/json/setting.json<br>
 　
 　処理内容<br>
 　- 期限切れ要素の削除<br>
 　- 新規追加の場合は先頭に挿入。<br>
 　- 更新があれば一度削除し先頭挿入。<br>
 <br>
-6. 資材情報更新
+6. 資材情報更新<br>
 　新規追加されたイベントの中から最も eventDate が新しいイベントを基準として更新します。<br>
 　- materialsText<br>
-　- materialsCreateDate
+　- materialsCreateDate<br>
 <br>
-7. 操作結果通知テキスト生成
+7. 操作結果通知テキスト生成<br>
 　処理結果から通知テキストを生成します。<br>
 
 　生成される内容<br>
@@ -72,11 +69,11 @@ Scroll down for the English version.
 materialsText 更新<br>
 materialsCreateDate 更新<br>
 
-結果は logs/ ディレクトリに保存されます。
-
-【実行方法】
-　python tools/main.py または run_app.bat
-
+結果は logs/ ディレクトリに保存されます。<br>
+<br>
+【実行方法】<br>
+　python tools/main.py または run_app.bat<br>
+<br>
 【必要環境】<br>
 　Python 3.10+<br>
 <br>
