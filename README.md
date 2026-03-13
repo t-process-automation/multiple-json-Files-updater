@@ -22,14 +22,14 @@ Scroll down for the English version.
   Do you want to proceed with deletion? (y/n)
 　
   削除処理は sweep_close_contents() により実行されます。 
-
+<br>
 2. イベントID入力
-　CLI で vl800 配下のフォルダ名（イベント ID）を入力します。
-　・複数入力が可能
+　CLI で vl800 配下のフォルダ名（イベント ID）を入力します。<br>
+　・複数入力が可能<br>
 　・入力バリデーションあり
-
+<br>
 3. vl800 setting.json 解析
-　入力されたフォルダ名から、次のファイルを取得して必要な値を抽出します。
+　入力されたフォルダ名から、次のファイルを取得して必要な値を抽出します。<br>
 　vl800/{eventId}/list/{region}/setting.json
 
 　取得項目<br>
@@ -40,57 +40,57 @@ Scroll down for the English version.
 　- materialsCreateDate<br>
 
 　抽出処理は get_values_from_vl800_setting_json() で実装されています。 
- 
+<br>
 4. 重複チェック
 　vl101の一覧ページに同じeventIdが存在するかを確認します。
-　判定結果に応じて次の処理を行います。
-
-　・存在しない場合 → 新規追加
-　・存在する場合 → 既存データを更新
+　判定結果に応じて次の処理を行います。<br>
+　- 存在しない場合 → 新規追加<br>
+　- 存在する場合 → 既存データを更新<br>
+<br>
 5. vl101 setting.json 更新
 　新規または更新対象のイベントを次のファイルへ反映します。
 　vl101/{region}/json/setting.json
 　
-　処理内容
-　・期限切れ要素の削除
-　・新規追加の場合は先頭に挿入。
-　・更新があれば一度削除し先頭挿入。
-
+　処理内容<br>
+　- 期限切れ要素の削除<br>
+　- 新規追加の場合は先頭に挿入。<br>
+　- 更新があれば一度削除し先頭挿入。<br>
+<br>
 6. 資材情報更新
-　新規追加されたイベントの中から最も eventDate が新しいイベントを基準として更新します。
-　・materialsText
-　・materialsCreateDate
-
+　新規追加されたイベントの中から最も eventDate が新しいイベントを基準として更新します。<br>
+　- materialsText<br>
+　- materialsCreateDate
+<br>
 7. 操作結果通知テキスト生成
-　処理結果から通知テキストを生成します。
+　処理結果から通知テキストを生成します。<br>
 
-　生成される内容
-　・新規追加イベント
-　・更新イベント
-　・削除イベント
+　生成される内容<br>
+　- 新規追加イベント<br>
+　- 更新イベント<br>
+　- 削除イベント<br>
 
-materialsText 更新
-materialsCreateDate 更新
+materialsText 更新<br>
+materialsCreateDate 更新<br>
 
 結果は logs/ ディレクトリに保存されます。
 
 【実行方法】
 　python tools/main.py または run_app.bat
 
-【必要環境】
-　Python 3.10+
+【必要環境】<br>
+　Python 3.10+<br>
+<br>
+　使用ライブラリ<br>
+　- json<br>
+　- pathlib<br>
+　- dataclasses<br>
+　- collections<br>
+<br>
+　外部ライブラリは使用していません。<br>
+<br><br><br>
 
-　使用ライブラリ
-　・json
-　・pathlib
-　・dataclasses
-　・collections
 
-　外部ライブラリは使用していません。
-
-
-
-【Processing Multiple JSON Files】
+【Processing Multiple JSON Files】<br>
 Multiple JSON File Processing Tool
 
 This CLI tool automatically transfers and updates elements from multiple independent JSON files (stored under vl800) into a single aggregated JSON file (vl101).
