@@ -1,27 +1,27 @@
 【複数の JSON ファイル処理ツール】<br>
 Scroll down for the English version.
 
-;&nbsp;&nbspこのツールは、複数の独立した JSON ファイル（vl800 配下）に含まれる要素を、ひとつの集約 JSON ファイル（vl101）へ自動で転記・更新する CLI ツールです。
-;&nbsp;&nbspイベントデータの同期・更新処理を自動化し、以下の作業を実行します。
+  このツールは、複数の独立した JSON ファイル（vl800 配下）に含まれる要素を、ひとつの集約 JSON ファイル（vl101）へ自動で転記・更新する CLI ツールです。
+  イベントデータの同期・更新処理を自動化し、以下の作業を実行します。
 
-;&nbsp;&nbsp1 vl101 の JSON ファイルを読み込み、期限切れ要素を検出して削除
-;&nbsp;&nbsp2 vl800 から新規イベントを追加（vl800 → vl101）
-;&nbsp;&nbsp3 既存イベントがある場合は内容を更新
-;&nbsp;&nbsp4 vl800 配下で最も日付が未来のデータから materialsText と materialsCreateDate をvl101へ転記
-;&nbsp;&nbsp5 操作結果の通知テキスト生成
+  1 vl101 の JSON ファイルを読み込み、期限切れ要素を検出して削除
+  2 vl800 から新規イベントを追加（vl800 → vl101）
+  3 既存イベントがある場合は内容を更新
+  4 vl800 配下で最も日付が未来のデータから materialsText と materialsCreateDate をvl101へ転記
+  5 操作結果の通知テキスト生成
 
-;&nbsp;&nbsp本ツールは vl800 と vl101 の 2 つのデータ構造を対象に処理を行います。
+  本ツールは vl800 と vl101 の 2 つのデータ構造を対象に処理を行います。
 
 【主な機能】
-1. 期限切れ要素の削除
-　vl101 の JSON ファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出して削除します。
+ 1. 期限切れ要素の削除
+  vl101 の JSON ファイルを読み込み、contentsClose が期限を過ぎたイベントを自動検出して削除します。
 
-　期限判定は次の条件で行われます。
-　contentsClose + grace_days
-
-　対象イベントは削除前に一覧表示され、削除実行前にユーザー確認が行われます。
+  期限判定は次の条件で行われます。contentsClose + grace_days
+  
+  対象イベントは削除前に一覧表示され、削除実行前にユーザー確認が行われます。
   Do you want to proceed with deletion? (y/n)
-　削除処理は sweep_close_contents() により実行されます。 
+　
+  削除処理は sweep_close_contents() により実行されます。 
 
 2. イベントID入力
 　CLI で vl800 配下のフォルダ名（イベント ID）を入力します。
