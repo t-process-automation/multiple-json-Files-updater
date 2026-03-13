@@ -1,4 +1,4 @@
-【複数の JSON ファイル処理ツール】
+【複数の JSON ファイル処理ツール】<br>
 Scroll down for the English version.
 
 このツールは、複数の独立した JSON ファイル（vl800 配下）に含まれる要素を、ひとつの集約 JSON ファイル（vl101）へ自動で転記・更新する CLI ツールです。
@@ -32,12 +32,12 @@ Scroll down for the English version.
 　入力されたフォルダ名から、次のファイルを取得して必要な値を抽出します。
 　vl800/{eventId}/list/{region}/setting.json
 
-　取得項目
-　・eventId
-　・eventDate
-　・regionName
-　・materialsText
-　・materialsCreateDate
+　取得項目<br>
+　- eventId<br>
+　- eventDate<br>
+　- regionName<br>
+　- materialsText<br>
+　- materialsCreateDate<br>
 
 　抽出処理は get_values_from_vl800_setting_json() で実装されています。 
  
